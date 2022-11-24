@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./src/style/style.css">
+	<title>My Finances</title>
+</head>
+<body>
+	<header>
+		<h1 id="logo">My Finances</h1>
+	</header>
+	<main>
+		<div class="container">
+			
+			<section id="balance">
+				<div class="card">
+					<h3>
+						<span>Entrada</span>
+						<img src="./src/assets/income.svg" alt="income">
+					</h3>
+					<p id="incomeDisplay"></p>
+				</div>
+				<div class="card">
+					<h3>
+						<span>Saída</span>
+						<img src="./src/assets/expense.svg" alt="expense">
+					</h3>
+					<p id="expenseDisplay"></p>
+				</div>
+				<div class="card blue">
+					<h3>
+						<span>Total</span>
+						<img src="./src/assets/total.svg" alt="Total">
+					</h3>
+					<p id="totalDisplay"></p>
+				</div>
+			</section>
+
+			<section id="transaction">
+				<a class="button add" onclick="Modal.open()">Adicionar Transação</a>
+				<div class="box__table">
+					<table id="data-table">
+						<thead>
+							<th>Descrição</th>
+							<th>Valor</th>
+							<th>Data</th>
+							<th></th>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer><p>© Copyright 2022. All rights reserved</p></footer>
+	<div class="modal__overlay ">
+		<div class="modal">
+			<div class="form">
+	
+				<h2>Adicionar Transação:</h2>
+				<form action="" onsubmit="Form.submit(event)">
+					<div class="inp__group">
+						<input name="description" id="description" placeholder="Descrição" type="text">
+					</div>
+	
+					<div class="inp__group">
+						<label for="amount">Valor</label>
+						<input name="amount" id="amount" placeholder="0.00" type="number" step="0.01">
+					</div>
+	
+					<span>Use o sinal <strong>-</strong> (negativo) para despesas e <strong>.</strong> (ponto) para casas decimais.</span>
+	
+					<div class="inp__group">
+						<label for="date">Data</label>
+						<input name="date" id="date" placeholder="dd/mm/aaaa" type="date">
+					</div>
+	
+					<div class="inp__group actions">
+						<a onclick="(Modal.close())" href="#" class="form__btn cancel">Cancelar</a>
+						<button class="form__btn save">Salvar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./src/script/script.js"></script>
+</html>
